@@ -1,0 +1,29 @@
+<h1>Listing dymmmies</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Budget</th>
+    <th>Deadline</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dymmmies.each do |dymmmy| %>
+  <tr>
+    <td><%= dymmmy.title %></td>
+    <td><%= dymmmy.description %></td>
+    <td><%= dymmmy.budget %></td>
+    <td><%= dymmmy.deadline %></td>
+    <td><%= link_to 'Show', dymmmy %></td>
+    <td><%= link_to 'Edit', edit_dymmmy_path(dymmmy) %></td>
+    <td><%= link_to 'Destroy', dymmmy, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dymmmy', new_dymmmy_path %>

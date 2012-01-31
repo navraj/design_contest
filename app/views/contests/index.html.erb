@@ -1,0 +1,28 @@
+<h1>Listing Ongoing Contests</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Budget</th>
+    <th>Deadline</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ongoing_contests.each do |contest| %>
+  <tr>
+    <td><%= link_to contest.title, requester_contest_path(current_requester, contest) %></td>
+    <td><%= contest.description %></td>
+    <td><%= contest.budget %></td>
+    <td><%= contest.deadline %></td>
+    <td><%#= link_to 'Edit', edit_contest_path(contest) %></td>
+    <td><%#= link_to 'Destroy', contest, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New contest', new_requester_contest_path(current_requester) %>
